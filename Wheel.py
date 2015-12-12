@@ -202,7 +202,7 @@ def main():
         drawWheel(DISPLAY, wheelCentre, offset) 
         drawText(DISPLAY, languagesUnselected, languagesWham, offset)
         pygame.time.wait(clockSpeed)
-        clockSpeed += random.randint(1, 3)
+        clockSpeed += random.randint(0, 4)
         if clockSpeed >= upperBound:
           wheelBackSpinning = True
           newSong = True
@@ -219,7 +219,7 @@ def main():
         drawWheel(DISPLAY, wheelCentre, offset) 
         drawText(DISPLAY, languagesUnselected, languagesWham, offset)
         pygame.time.wait(clockSpeed)
-        clockSpeed += 10        
+        clockSpeed += random.randrange(7, 13)        
         if clockSpeed >= 520:
           wheelBackSpinning = False
           wheelStopped = True
