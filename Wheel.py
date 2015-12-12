@@ -5,9 +5,7 @@ Some notes about the program.
 
 TODO:
 
-1. Add Sounds
-
-Sounds make everything better!
+1. Upkeep and bug fix as I go along
 """
 # Get pygame libraries  
 import pygame, sys, random
@@ -20,7 +18,8 @@ random.seed()
 pygame.init() 
 
 # Global variables so user can easily change wheel properties
-LANGUAGES = ("Python", "C++", "C", "Java", "Ruby", "Perl", "RPG Maker", "Prolog")
+LANGUAGES = ("Python", "C++", "C", "Java", "JavaScript", "ASM", "RPG Maker",
+             "Prolog", "Lua")
 
 # Set up the colours that make up the sections of the wheel
 BLACK = (0, 0, 0)
