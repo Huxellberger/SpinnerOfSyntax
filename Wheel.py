@@ -158,6 +158,7 @@ def main():
   offset = random.randint(0, len(LANGUAGES))
   clockSpeed = 1
   newSong = False
+  upperBound = random.randrange(350, 400)
   # Establish top-left corner of the wheel
   wheelCentre = (WINDOW_WIDTH/8, WINDOW_HEIGHT/8)
 
@@ -193,6 +194,7 @@ def main():
           pygame.mixer.music.load("assets/Spinning.wav")
           pygame.mixer.music.play(-1, 0.0)
           newSong = False
+        offset += 1
         if offset >= len(LANGUAGES):
           offset = 0
         DISPLAY.fill((CREAM))
@@ -201,8 +203,7 @@ def main():
         drawText(DISPLAY, languagesUnselected, languagesWham, offset)
         pygame.time.wait(clockSpeed)
         clockSpeed += random.randint(1, 3)
-        offset += 1
-        if clockSpeed >= 350:
+        if clockSpeed >= upperBound:
           wheelBackSpinning = True
           newSong = True
       else:
@@ -210,6 +211,7 @@ def main():
           pygame.mixer.music.load("assets/GrindingHalt.wav")
           pygame.mixer.music.play(-1, 0.0)
           newSong = False
+        offset -= 1
         if offset < 0:
           offset = len(LANGUAGES) - 1
         DISPLAY.fill((CREAM))
@@ -218,8 +220,7 @@ def main():
         drawText(DISPLAY, languagesUnselected, languagesWham, offset)
         pygame.time.wait(clockSpeed)
         clockSpeed += 10        
-        offset -= 1
-        if clockSpeed >= 500:
+        if clockSpeed >= 520:
           wheelBackSpinning = False
           wheelStopped = True
           pygame.mixer.music.load("assets/WinnerRevealed.wav")
